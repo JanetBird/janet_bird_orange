@@ -14,6 +14,46 @@ rhymesApp.getRhyme = function (word) {
         console.log(data);
     });
 };
+rhymesApp.getRhyme('orange');
 
-rhymesApp.getRhyme('dog');
+/* PSEUDOCODE
+
+
+1. Take the imput strings (first 2 sentences - lines) from user on submit
+<< should be a submit/next button after 2 inputs
+
+2. get the last words from the imput strings and save them in variables
+
+3. use these words to pass to API rhymesApp.getRhyme('{WORD1, WORD2}');
+
+4. get a few rhymes back (- may want to limit later)
+
+!!!!!  don't show words that already contain the imput string!! (ORANGE - BLOODY ORANGE)
+
+5. pass them to select dropdown menus on lines 3 & 4
+
+6. user picks the desired rhyme word
+
+7. the word is added to the next lines
+
+!!!! need to decide what goes first: 
+3d sentence & the word is added to the string     OR
+the word itself & then user adds the rest of the sentence
+....
+
+user gets the whole 4 lines of a poem (styled & pretty) on a new page
+
+
+*/
+
+// init function to get the app going
+rhymesApp.init = function () {
+    console.log('lets go!');
+};
+
+
+// document ready
+$(function () {
+    rhymesApp.init();
+});
 
