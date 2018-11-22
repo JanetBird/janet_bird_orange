@@ -5,40 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Orange</title>
-    <link rel="stylesheet" href="styles.css">
-
-    <style>
-        div {
-            margin: 50px 20px;
-        }
-
-        input[type=text] {
-            width: 500px;
-        }
-    </style>
-
+    <title>Orange.Create</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
 </head>
-
 <body>
-    <main>
+    <section>
+        <div class="headerNav formNav">
+            <h1>Orange.</h1>
+            <p><svg class="hamburger" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    x="0px" y="0px" viewBox="0 0 595.3 1052.375" enable-background="new 0 0 595.3 841.9" xml:space="preserve">
+                    <polygon points="465,434 138,434 138.2,369.8 464.8,369.8 " />
+                    <path d="M446.4,320.4H156.6c15.3-27,37.9-49.3,65.2-64.2h159.6C408.5,271.1,431.2,293.4,446.4,320.4z" />
+                    <path d="M448.8,480c-13.9,26.4-34.8,48.6-60.1,64.2H214.2c-25.3-15.6-46.1-37.8-60.1-64.2H448.8z" />
+                    <path d="M446.4,320.4H156.6c15.3-27,37.9-49.3,65.2-64.2h159.6C408.5,271.1,431.2,293.4,446.4,320.4z" />
+                    <path d="M448.8,480c-13.9,26.4-34.8,48.6-60.1,64.2H214.2c-25.3-15.6-46.1-37.8-60.1-64.2H448.8z" />
+                    <path d="M468,402.4c0,10.8-1,21.3-3,31.6H138c-2-10.2-3-20.8-3-31.6c0-11.2,1.1-22.1,3.2-32.6h326.6  C466.9,380.3,468,391.2,468,402.4z" /></svg></p>
+        </div>
+    </section>
+    <main class="mainForm">
         <!-- HEADER STARTS -->
-        <header>
-            <h1>Things That Rhyme With Orange</h1>
-        </header>
+        
+        <h2>Start Creating. Write the first two lines of your piece.</h2>
+        
         <!-- HEADER ENDS -->
         <!-- STEP ONE SECTION STARTS -->
-        <section class="stepOne">
-            <form id="stepOneForm" action="">
+        <section class="stepOne wrapper">
+            <form class="stepOneForm" id="stepOneForm" action="">
                 <!-- FIRST LINE OF A POEM -->
                 <div class="firstLine">
-                    <label for="firstLine">First Line:</label>
-                    <input type="text" id="firstLine" placeholder="Your First Line">
+                    <label for="firstLine"></label>
+                    <input type="text" id="firstLine" placeholder="(your first line)">
                 </div>
                 <!-- SECOND LINE OF A POEM -->
                 <div class="secondLine">
-                    <label for="secondLine">Second Line:</label>
-                    <input type="text" id="secondLine" placeholder="Your Second Line">
+                    <label for="secondLine"></label>
+                    <input type="text" id="secondLine" placeholder="(your second line)">
                 </div>
                 <!--CAN BE REPLACED WITH BUTTON TAG SEMANTICALLY????-->
                 <div class="submit">
@@ -48,11 +52,25 @@
         </section>
         <!-- STEP ONE SECTION ENDS -->
         <!-- STEP TWO SECTION STARTS -->
+
         <section class="stepTwo">
-            <form id="stepTwoForm" action="">
+
+            <form class="stepTwoForm" id="stepTwoForm" action="">
+
+                <h2>Ryhming words to help with your next lines.</h2>
 
                 <!-- THIRD LINE RHYME SUGGESTIONS -->
-                <div class="thirdLineOptions">
+                <div class="thirdLineOptions lineOptions">
+                    <p>word</p>
+                    <p>word</p>
+                    <p>word</p>
+                    <p>word</p>
+                    <p>word</p>
+                    <p>word</p>
+                    <p>word</p>
+                    <p>word</p>
+                    <p>word</p>
+                    <p>word</p>
                     <!-- will be generated in JS as below
                     <p class="rhymeOption">Hello</p>
                     <p class="rhymeOption selectedRhymeOption">Hello</p> 
@@ -61,11 +79,21 @@
                 </div>
                 <!-- THIRD LINE OF A POEM -->
                 <div class="thirdLine">
-                    <label for="">Third Line:</label>
-                    <input type="text" id="thirdLine" placeholder="Your Third Line">
+                    <label for="thirdLine"></label>
+                    <input type="text" id="thirdLine" placeholder="(your third line)">
                 </div>
                 <!-- FOURTH LINE RHYME SUGGESTIONS -->
-                <div class="fourthLineOptions">
+                <div class="fourthLineOptions lineOptions">
+                    <p>word</p>
+                    <p>word</p>
+                    <p>word</p>
+                    <p>word</p>
+                    <p>word</p>
+                    <p>word</p>
+                    <p>word</p>
+                    <p>word</p>
+                    <p>word</p>
+                    <p>word</p>
                     <!-- will be generated in JS as below
                     <p class="rhymeOption">Hello</p>
                     <p class="rhymeOption selectedRhymeOption">Hello</p> 
@@ -74,8 +102,8 @@
                 </div>
                 <!-- FOURTH LINE OF A POEM -->
                 <div class="fourthLine">
-                    <label for="fourthLine">Fourth Line:</label>
-                    <input type="text" id="fourthLine" placeholder="Your Fourth Line">
+                    <label for="fourthLine"></label>
+                    <input type="text" id="fourthLine" placeholder="(your fourth line)">
                 </div>
 
                 <div class="submit">

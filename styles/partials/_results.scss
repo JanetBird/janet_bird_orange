@@ -1,33 +1,91 @@
-// .writingForm {
-//     display: flex;
-// }
+.form {
+    padding: 10px 20px;
+div {
+        margin: 50px 10px;
+        }
+}
 
-// .form {
-//     padding: 10px 20px;
-// div {
-//         margin: 50px 10px;
-//         }
-// }
+.hamburger {
+    width: 80px;
+}
 
-// input[type=text] {
-//         width: 500px;
-//         @include dark-font(1.2rem);
-//         }
+.mainForm {
+  background: $color-sectxt;  
+}
 
-// label, span, input[type=submit], select {
-//     @include dark-font(1.2rem);
-// }
+.formNav {
+    height: 200px;
+    background: $color-sectxt;
+}
 
-// // .results {
-// //     padding: 10px 20px;
-// //     background: lightgray;
-// //     width: 50%;
-// //     p {
-// //       @include dark-font(1.6rem);  
-// //     }
-// // }
+input[type=text] {
+        width: 100%;
+        @include dark-font(1.6rem);
+        border: none;
+        border-bottom: 2px solid $color-maintxt;
+        }
 
-// .resultsNav {
-//     background: $color-accent2;
-//     height: 150px;
-// }
+label, input[type=submit] {
+    @include dark-font(1.2rem);
+}
+
+
+h2 {
+    @include accent-font(2rem);
+    text-align: center;
+    padding: 20px 20px 50px 20px;
+}
+
+.stepOne, .stepTwo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    div {
+         margin-bottom: 20px;
+         width: 80%;
+    }
+}
+
+.stepOneForm, .stepTwoForm {
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.stepOneForm {
+    min-height: 50vh;
+}
+
+.stepTwoForm {
+    min-height: 100vh;
+}
+
+.submit {
+    display:flex;
+    justify-content: center;
+}
+
+.submitButton {
+            padding: 10px;
+            @include dark-font(1.6rem);
+            border-radius: 5px;
+            text-decoration: none;
+            border: 2px solid $color-maintxt;
+            background: white;
+}
+
+.lineOptions {
+    display: flex;
+    flex-wrap: wrap;
+    p{
+        @include dark-font(1.6rem);
+        width: 20%;
+        text-align: center;
+        line-height: 2.5rem;
+        color: $color-accent2;
+        text-transform: uppercase;
+    }
+}

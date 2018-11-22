@@ -274,3 +274,109 @@ footer {
     font-weight: 700;
     margin: 0;
     padding: 20px; }
+
+.form {
+  padding: 10px 20px; }
+  .form div {
+    margin: 50px 10px; }
+
+.hamburger {
+  width: 80px; }
+
+.mainForm {
+  background: #f6f6f6; }
+
+.formNav {
+  height: 200px;
+  background: #f6f6f6; }
+
+input[type=text] {
+  width: 100%;
+  font-size: 1.6rem;
+  color: #1f1f1f;
+  margin: 0;
+  border: none;
+  border-bottom: 2px solid #1f1f1f; }
+
+label, input[type=submit] {
+  font-size: 1.2rem;
+  color: #1f1f1f;
+  margin: 0; }
+
+h2 {
+  font-size: 2rem;
+  color: #fe8315;
+  margin: 0;
+  text-align: center;
+  padding: 20px 20px 50px 20px; }
+
+.stepOne, .stepTwo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 100vh; }
+  .stepOne div, .stepTwo div {
+    margin-bottom: 20px;
+    width: 80%; }
+
+.stepOneForm, .stepTwoForm {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
+
+.stepOneForm {
+  min-height: 50vh; }
+
+.stepTwoForm {
+  min-height: 100vh; }
+
+.submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.submitButton {
+  padding: 10px;
+  font-size: 1.6rem;
+  color: #1f1f1f;
+  margin: 0;
+  border-radius: 5px;
+  text-decoration: none;
+  border: 2px solid #1f1f1f;
+  background: white; }
+
+.lineOptions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .lineOptions p {
+    font-size: 1.6rem;
+    color: #1f1f1f;
+    margin: 0;
+    width: 20%;
+    text-align: center;
+    line-height: 2.5rem;
+    color: #1b998b;
+    text-transform: uppercase; }
