@@ -9,12 +9,34 @@ rhymesApp.getRhyme = function (word) {
             'X-Mashape-Key': rhymesApp.apiKey
         }
     })
-    .then(function (data) {
-        
+    .then(function (data) {  
         console.log(data);
     });
 };
 rhymesApp.getRhyme('orange');
+
+    // event.preventDefault();
+
+    // $(".startForm").on("submit", function (event) {
+    //     const firstLineInput = $(".firstLine").val();
+    //     console.log(firstLineInput);
+    // });
+
+window.onload = rotate;
+
+var theTitle = 0;
+const headerImages = new Array("../assets/word-1.png", "../assets/word-2.png", "../assets/word-3.png", "../assets/word-4.png", "../assets/word-5.png", "../assets/word-6.png" );
+
+function rotate() {
+    theTitle++;
+    if (theTitle == headerImages.length) {
+        theTitle = 0;
+    }
+    document.getElementById("titleImage").src = headerImages[theTitle];
+
+    setTimeout(rotate, 3 * 250);
+}
+
 
 /* PSEUDOCODE
 

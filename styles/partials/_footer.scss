@@ -1,0 +1,9 @@
+footer {
+    background: $color-maintxt;
+    text-align: center;
+    p {
+        @include light-font(1rem);
+        margin: 0;
+        padding: 20px;
+    }
+}

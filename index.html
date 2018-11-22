@@ -4,72 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Orange</title>
-    <link rel="stylesheet" href="styles.css">
-
-    <style>
-        div {
-            margin: 50px 20px;
-        }
-
-        input[type=text] {
-            width: 500px;
-        }
-    </style>
+    <title>Orange.</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
+    <header>
+        <div class="headerNav">
+            <h1>Orange.</h1>
+            <p><svg class="hamburger" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
+                viewBox="0 0 595.3 1052.375" enable-background="new 0 0 595.3 841.9" xml:space="preserve">
+                <polygon points="465,434 138,434 138.2,369.8 464.8,369.8 " />
+                <path d="M446.4,320.4H156.6c15.3-27,37.9-49.3,65.2-64.2h159.6C408.5,271.1,431.2,293.4,446.4,320.4z" />
+                <path d="M448.8,480c-13.9,26.4-34.8,48.6-60.1,64.2H214.2c-25.3-15.6-46.1-37.8-60.1-64.2H448.8z" />
+                <path d="M446.4,320.4H156.6c15.3-27,37.9-49.3,65.2-64.2h159.6C408.5,271.1,431.2,293.4,446.4,320.4z" />
+                <path d="M448.8,480c-13.9,26.4-34.8,48.6-60.1,64.2H214.2c-25.3-15.6-46.1-37.8-60.1-64.2H448.8z" />
+                <path d="M468,402.4c0,10.8-1,21.3-3,31.6H138c-2-10.2-3-20.8-3-31.6c0-11.2,1.1-22.1,3.2-32.6h326.6  C466.9,380.3,468,391.2,468,402.4z" /></svg></p>
+        </div>
+
+        <div class="headerImages">
+            <img src="./assets/word-1.png" id="titleImage" alt="titleImage">
+        </div>
+
+        <svg class="mouseScroll" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+            xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0px" y="0px" viewBox="0 0 100 125">
+            <g transform="translate(0,-952.36218)">
+                <path style="color:#000000;enable-background:accumulate;" d="m 53.50015,958.36216 c -4.953,0 -9,4.04798 -9,9 l 0,9.09375 c -11.793,1.01259 -21,10.84214 -21,22.90625 l 0,24.00004 c 0,12.742 10.258,23 23,23 12.742,0 23,-10.258 23,-23 l 0,-24.00004 c 0,-12.06411 -9.207,-21.89366 -21,-22.90625 l 0,-9.09375 c 0,-2.80399 2.1926,-5 5,-5 2.8708,0 4.8995,1.94961 5,5.0625 l 0.062,2 c 0.1617,5.01211 4.1104,8.9375 9,8.9375 4.953,0 8.9375,-4.07497 8.9375,-9 a 2.0001999,2.0001999 0 1 0 -4,0 c 0,2.83096 -2.1301,5 -4.9375,5 -2.8708,0 -4.8995,-1.94962 -5,-5.0625 l -0.062,-2 c -0.1617,-5.01212 -4.1104,-8.9375 -9,-8.9375 z m -7,28 c 1.662,0 3,1.33799 3,3 l 0,10 c 0,1.66204 -1.338,3.00004 -3,3.00004 -1.662,0 -3,-1.338 -3,-3.00004 l 0,-10 c 0,-1.66201 1.338,-3 3,-3 z"
+                    fill="#000000" stroke="none" marker="none" visibility="visible" display="inline" overflow="visible" />
+            </g>
+        </svg>
+    </header>
     <main>
-        <form class="startForm" action="">
-            <div class="firstLine">
-                <label for="">First Line:</label>
-                <input type="text" id="firstLine" placeholder="Your First Line">
-            </div>
+        <section class="about">
+            <p>Welcome to <span>Orange.</span></p>
+            <p>A convenient application for writers of all kinds</p>
+            <p>to lay down some lines.</p> 
+            <p>With easy access to ryhming words, see your lyrical and poetic pieces come together. Save your content in our app, and return to your words anytime you're ready for more.</p>
+        </section>
 
-            <div class="secondLine">
-                <label for="">Second Line:</label>
-                <input type="text" id="secondLine" placeholder="Your Second Line">
-            </div>
-
-            <div class="next">
-                <input id="button" class="nextButton" type="submit" value="Next">
-            </div>
-        </form>
-
-        
-        <form class="endForm" action="">
-            <div class="wordOne">
-                <label for="">Choose a word to ryhme with the last word of your first line:</label>
-                <select name="wordOne" id="wordOne">
-                    <label for="">Choose a word to ryhme with the last word of your first line:</label>
-                    <option value="wordOne">Word One</option>
-                </select>
-            </div>
-
-            <div class="thirdLine">
-                <label for="">Third Line:</label>
-                <input type="text" id="firstLine" placeholder="Your Third Line">
-                <span>Word One</span>
-            </div>
-
-            <div class="wordTwo">
-                <label for="">Choose a word to ryhme with the last word of your first line:</label>
-                <select name="wordTwo" id="wordTwo">
-                    <label for="">Choose a word to ryhme with the last word of your second line:</label>
-                    <option value="wordTwo">Word Two</option>
-                </select>
+        <section class="startGallery">
+            <div class="start">
+                <a href="writingForm.html">Start Writing</a>
             </div>
             
-            <div class="fourthLine">
-                <label for="">Fourth Line:</label>
-                <input type="text" id="secondLine" placeholder="Your Fourth Line">
-                <span>Word Two</span>
+            <div class="gallery">
+                <figure>
+                    <figcaptions></figcaptions>
+                </figure>
+                <figure>
+                    <figcaptions></figcaptions>
+                </figure>
+                <figure>
+                    <figcaptions></figcaptions>
+                </figure>
+                <figure>
+                    <figcaptions></figcaptions>
+                </figure>
             </div>
-
-            <div class="submit">
-                <input id="button" class="submitButton" type="submit" value="Create">
-            </div>
-        </form>
+        </section>
     </main>
+
+    <footer>
+        <p class="copyright">Copyright @ 2018 Bionovaj</p>
+    </footer>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="script.js"></script>
 </body>
