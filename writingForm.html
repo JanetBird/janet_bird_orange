@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Orange</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        div {
+            margin: 50px 20px;
+        }
+
+        input[type=text] {
+            width: 500px;
+        }
+    </style>
+
+</head>
+<body>
+    <main>
+        <!-- HEADER STARTS -->
+        <header>
+            <h1>Things That Rhyme With Orange</h1>
+        </header>
+        <!-- HEADER ENDS -->
+        <!-- STEP ONE SECTION STARTS -->
+        <section class="stepOne">
+            <form id="stepOneForm" action="">
+                <!-- FIRST LINE OF A POEM -->
+                <div class="firstLine">
+                    <label for="firstLine">First Line:</label>
+                    <input type="text" id="firstLine" placeholder="Your First Line">
+                </div>
+                <!-- SECOND LINE OF A POEM -->
+                <div class="secondLine">
+                    <label for="secondLine">Second Line:</label>
+                    <input type="text" id="secondLine" placeholder="Your Second Line">
+                </div>
+<!--CAN BE REPLACED WITH BUTTON TAG SEMANTICALLY????-->
+                <div class="submit">
+                    <input id="submitStepOne" class="submitButton" type="submit" value="Help me rhyme">
+                </div>
+            </form>
+        </section>
+        <!-- STEP ONE SECTION ENDS -->
+        <!-- STEP TWO SECTION STARTS -->
+        <section class="stepTwo">
+            <form id="stepTwoForm" action="">
+
+                <!-- THIRD LINE RHYME SUGGESTIONS -->
+                <div class="thirdLineOptions">
+                    <!-- will be generated in JS as below
+                    <p class="rhymeOption">Hello</p>
+                    <p class="rhymeOption selectedRhymeOption">Hello</p> 
+                        for words to change color when selected by user
+                    -->
+                </div>
+                <!-- THIRD LINE OF A POEM -->
+                <div class="thirdLine">
+                    <label for="">Third Line:</label>
+                    <input type="text" id="thirdLine" placeholder="Your Third Line">
+                </div>
+                <!-- FOURTH LINE RHYME SUGGESTIONS -->
+                <div class="fourthLineOptions">
+                    <!-- will be generated in JS as below
+                    <p class="rhymeOption">Hello</p>
+                    <p class="rhymeOption selectedRhymeOption">Hello</p> 
+                        for words to change color when selected by user
+                    -->
+                </div>
+                <!-- FOURTH LINE OF A POEM -->
+                <div class="fourthLine">
+                    <label for="fourthLine">Fourth Line:</label>
+                    <input type="text" id="fourthLine" placeholder="Your Fourth Line">
+                </div>
+
+                <div class="submit">
+                    <input id="button" class="submitButton" type="submit" value="Create My Poem">
+                </div>
+            </form>
+        </section>
+        <!-- STEP TWO SECTION ENDS -->
+        <!-- STEP THREE SECTION STARTS -->
+        <section class="stepThree">
+
+        <!-- 
+            OUR POEM GOES HERE 
+            + twitter share button
+            + RESTART button
+            (if we have more time we can create another poem, so we'll redirect to the step one & start over)
+        -->
+
+        </section>
+        <!-- STEP THREE SECTION ENDS -->
+    </main>
+    <!-- JQUERY CDN LINK -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- LINK TO AN EXTERNAL JS FILE -->
+    <script src="script.js"></script>
+</body>
+</html>
