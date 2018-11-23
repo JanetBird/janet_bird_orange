@@ -2,8 +2,12 @@
         background-image: url(../assets/image-1.png);
         background-size: cover;
         background-position: 50%;
-        padding: 150px 300px;
+        padding: 150px 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         p {
+        width: 75%;
         @include light-font(2.4rem);
         text-align: center;
                 span {

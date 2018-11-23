@@ -204,8 +204,19 @@ h1 {
   background-image: url(../assets/image-1.png);
   background-size: cover;
   background-position: 50%;
-  padding: 150px 300px; }
+  padding: 150px 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
   .about p {
+    width: 75%;
     font-size: 2.4rem;
     color: #f6f6f6;
     margin: 0;
@@ -299,9 +310,10 @@ input[type=text] {
   border-bottom: 2px solid #1f1f1f; }
 
 label, input[type=submit] {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #1f1f1f;
-  margin: 0; }
+  margin: 0;
+  margin-top: 100px; }
 
 h2 {
   font-size: 2rem;
@@ -357,7 +369,7 @@ h2 {
 
 .submitButton {
   padding: 10px;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: #1f1f1f;
   margin: 0;
   border-radius: 5px;
@@ -370,31 +382,79 @@ h2 {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
   .lineOptions p {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: #1f1f1f;
     margin: 0;
-    width: 20%;
     text-align: center;
     line-height: 2.5rem;
     color: #1b998b;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    margin: 10px; }
 
 .stepThree {
-  margin-top: 300px; }
+  margin-top: 200px;
+  padding-top: 200px; }
   .stepThree a {
     padding: 10px;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: #1f1f1f;
     margin: 0;
     border-radius: 5px;
     text-decoration: none;
     border: 2px solid #1f1f1f;
-    margin-top: 200px; }
+    margin-top: 100px;
+    background: white; }
 
 h3 {
+  font-family: 'Satisfy', cursive;
   font-size: 1.6rem;
   color: #1f1f1f;
   margin: 0;
-  line-height: 2; }
+  line-height: 1.25;
+  margin-bottom: 10px;
+  text-align: center; }
+
+@media (max-width: 1220px) {
+  h2, h3 {
+    padding-left: 60px;
+    padding-right: 60px; }
+  .about p {
+    width: 100%; } }
+
+@media (max-width: 750px) {
+  .headerNav {
+    padding-left: 25px;
+    padding-right: 25px; }
+  .startGallery {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .start {
+    margin: 100px auto; }
+  .gallery {
+    width: 100%; }
+  .about {
+    padding-left: 30px;
+    padding-right: 30px; }
+    .about p {
+      font-size: 1.8rem; } }
+
+@media (max-width: 375px) {
+  h1 {
+    font-size: 3.6rem; }
+  .hamburger {
+    width: 60px; }
+  .about p {
+    font-size: 1.6rem; }
+  .gallery {
+    height: 250px; }
+    .gallery figure:nth-child(even) {
+      display: none; }
+  .start a {
+    text-align: center; } }
