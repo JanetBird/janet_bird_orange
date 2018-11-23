@@ -97,7 +97,8 @@ h2 {
         @include dark-font(1.6rem);
         border-radius: 5px;
         text-decoration: none;
-        border: 2px solid $color-maintxt;     
+        border: 2px solid $color-maintxt;  
+        margin-top: 200px;   
     }
 }
 

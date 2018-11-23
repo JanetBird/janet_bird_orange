@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,7 +43,6 @@
                     <label for="secondLine"></label>
                     <input type="text" id="secondLine" placeholder="(your second line)">
                 </div>
-                <!--CAN BE REPLACED WITH BUTTON TAG SEMANTICALLY????-->
                 <div class="submit">
                     <input id="submitStepOne" class="submitButton" type="submit" value="Help me rhyme">
                 </div>
@@ -60,21 +58,13 @@
                 <h2>Ryhming words to help with your next lines.</h2>
 
                 <!-- THIRD LINE RHYME SUGGESTIONS -->
-                <div class="thirdLineOptions lineOptions">
-                    <p>word</p>
-                    <p>word</p>
-                    <p>word</p>
-                    <p>word</p>
-                    <p>word</p>
-                    <p>word</p>
-                    <p>word</p>
-                    <p>word</p>
-                    <p>word</p>
-                    <p>word</p>
+                <div id="thirdLineOptions">
                     <!-- will be generated in JS as below
-                    <p class="rhymeOption">Hello</p>
-                    <p class="rhymeOption selectedRhymeOption">Hello</p> 
-                        for words to change color when selected by user
+                    <div>
+                        <p class="rhymeOption">Hello</p>
+                        <p class="rhymeOption selectedRhymeOption">Hello</p> 
+                    </div>
+                    for words to change color when selected by user
                     -->
                 </div>
                 <!-- THIRD LINE OF A POEM -->
@@ -83,21 +73,9 @@
                     <input type="text" id="thirdLine" placeholder="(your third line)">
                 </div>
                 <!-- FOURTH LINE RHYME SUGGESTIONS -->
-                <div class="fourthLineOptions lineOptions">
-                    <p>word</p>
-                    <p>word</p>
-                    <p>word</p>
-                    <p>word</p>
-                    <p>word</p>
-                    <p>word</p>
-                    <p>word</p>
-                    <p>word</p>
-                    <p>word</p>
-                    <p>word</p>
+                <div id="fourthLineOptions">
                     <!-- will be generated in JS as below
-                    <p class="rhymeOption">Hello</p>
-                    <p class="rhymeOption selectedRhymeOption">Hello</p> 
-                        for words to change color when selected by user
+                    for words to change color when selected by user
                     -->
                 </div>
                 <!-- FOURTH LINE OF A POEM -->
@@ -107,7 +85,7 @@
                 </div>
 
                 <div class="submit">
-                    <input id="button" class="submitButton" type="submit" value="Create My Poem">
+                    <input id="submitStepTwo" class="submitButton" type="submit" value="Create My Poem">
                 </div>
             </form>
         </section>
@@ -137,5 +115,4 @@
     <!-- LINK TO AN EXTERNAL JS FILE -->
     <script src="script.js"></script>
 </body>
-
 </html>
