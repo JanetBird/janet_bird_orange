@@ -30,7 +30,7 @@ rhymesApp.displayRhymeOptions = function(options, containerID) {
     const container = $(`#${containerID}`);
     // looping through an array & adding elements to display rhyme options
     options.forEach(option => {
-        const optionElement = `<div><p>${option}</p></div>`;
+        const optionElement = `<p>${option}</p>`;
         container.append(optionElement);
     });
 }
@@ -69,6 +69,7 @@ rhymesApp.goToStepTwo = function() {
                 
                     if (thirdLineOptions.length === 0) {
                         chosenOptions = ['Orange'];
+                    // choose random up to 20 words for third line
                     } else if (thirdLineOptions.length > 20) {
                         chosenOptions = thirdLineOptions.slice(0, 20);
                     } else {
@@ -84,6 +85,7 @@ rhymesApp.goToStepTwo = function() {
                     
                     if (fourthLineOptions.length === 0) {
                         chosenOptions = ['Orange'];
+                    // choose random up to 20 words for fourth line
                     } else if (fourthLineOptions.length > 20) {
                         chosenOptions = fourthLineOptions.slice(0, 20);
                     } else {
@@ -98,13 +100,12 @@ rhymesApp.goToStepTwo = function() {
     $([document.documentElement, document.body]).animate({
         scrollTop: $(".stepTwo").offset().top
     }, 1500);
-    // choose random up to 20 words for third line & for fourth 
 
 
     // create word options in HTML
 
 
-    // add word hightlight functionality using $(this).toggleClass('selectedRhymeOption')
+    // add word hightlight functionality using $(this).toggleClass('selectedRhymeOption') OR css active
 }
 
 rhymesApp.goToStepThree = function () {
