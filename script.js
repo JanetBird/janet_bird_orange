@@ -1,17 +1,19 @@
 const rhymesApp = {
-    // apiRequestSuccessCounter: 0,
-    // create properties below to differenciate the responces from API
+
     firstLineWord: '',
     secondLineWord: '',
-
-
     thirdLineOptions: [],
     fourthLineOptions: [],
+
+    firstLine: '',
+    secondLine: '',
+    thirdLine: '',
+    fourthLine: ''
 };
+
 rhymesApp.apiKey = `9XESNPgsQwmshJuXetusEPPBhMylp15KY0tjsnZmXwr8rhaViH`;
 
-
-
+// api request function
 rhymesApp.getRhyme = function (word) {
     return $.ajax({
         url: `https://wordsapiv1.p.mashape.com/words/${word}/rhymes`, 
@@ -22,20 +24,27 @@ rhymesApp.getRhyme = function (word) {
     })
 };
 
+// function displaying rhyme results on the page
 rhymesApp.displayRhymeOptions = function(options, containerID) {
-    
+    // creating container constant
     const container = $(`#${containerID}`);
-
+    // looping through an array & adding elements to display rhyme options
     options.forEach(option => {
         const optionElement = `<div><p>${option}</p></div>`;
         container.append(optionElement);
     });
 }
 
+// function running on form submit
 rhymesApp.goToStepTwo = function() {
-    // get user input and saves it in a variable
+    // gets user input (first two sentences) and saves it in a variable
     const userInputFirstLine = $('#firstLine').val();
     const userInputSecondLine = $('#secondLine').val();
+
+    // save lines values to display later
+    rhymesApp.firstLine = userInputFirstLine;
+    rhymesApp.secondLine = userInputSecondLine;
+
 
     // extracts & saves the last words from the user input strings 
     const lastWordFirstLine = userInputFirstLine.split(" ").splice(-1);
@@ -44,14 +53,11 @@ rhymesApp.goToStepTwo = function() {
     // saving both words in array
     const words = [lastWordFirstLine, lastWordSecondLine];
 
-    // passing "rhymesApp.getRhyme" function above and maping through an array
+    // calling rhymesApp.getRhyme function to 
     const wordPromises = words.map(rhymesApp.getRhyme);
-
-    console.log(wordPromises);
-
+    // spreading wordPromises array
     $.when(...wordPromises)
         .then((...result) => {
-            console.log(result);
 
             result.forEach(result => {
                 let response = result[0];
@@ -68,16 +74,9 @@ rhymesApp.goToStepTwo = function() {
                     } else {
                         chosenOptions = thirdLineOptions;
                     }
-                    console.log('third line chosen options', chosenOptions);
 
                     rhymesApp.displayRhymeOptions(chosenOptions, 'thirdLineOptions');
                 };
-
-
-
-
-
-
 
                 // FOURTH LINE CONTENTS
                 if (response.word === lastWordSecondLine[0]) {
@@ -90,29 +89,16 @@ rhymesApp.goToStepTwo = function() {
                     } else {
                         chosenOptions = fourthLineOptions;
                     }
-                    console.log('fourth line chosen options', chosenOptions);
 
                     rhymesApp.displayRhymeOptions(chosenOptions, 'fourthLineOptions');
                 }
-
-
-
-
-
-
             });
         });
 
-    console.log("SOMEHOW RUNNING");
     $([document.documentElement, document.body]).animate({
         scrollTop: $(".stepTwo").offset().top
     }, 1500);
     // choose random up to 20 words for third line & for fourth 
-    console.log('Blabediiiiiiiiiiiiiiiii');
-    console.log(rhymesApp.thirdLineOptions);
-    console.log(rhymesApp.fourthLineOptions);
-    console.log('Blabediiiiiiiiiiiiiiiii');
-    // if (rhymesApp.thirdLineOptions.length)
 
 
     // create word options in HTML
@@ -122,6 +108,8 @@ rhymesApp.goToStepTwo = function() {
 }
 
 rhymesApp.goToStepThree = function () {
+    console.log("goToStepThree runs");
+
 
 }
 
@@ -129,8 +117,6 @@ rhymesApp.restart = function () {
 
 }
 
-
-// 1
 
 rhymesApp.setupUserEvents = function() {
     // create a function that saves user input values from Lines 1 & 2
@@ -140,21 +126,14 @@ rhymesApp.setupUserEvents = function() {
         event.preventDefault();
         rhymesApp.goToStepTwo();
     });
-    // STEP 2
-    // extend first step section & show second step section
-    // $('#submitStepOne').on('click', function() {
-    //     console.log('submit button click runs')
-    //     rhymesApp.goToStepTwo();
-    // });
-    
 
-    // STEP 3 (RESET)
+    // step 3 (reset)
+    $('#stepTwoForm').on('submit', function (event) {
+        // prevents form default behaviour
+        event.preventDefault();
+        rhymesApp.goToStepThree();
+    });
 }
-
-
-// 2
-// rhymesApp.getRhyme(lastWordFirstLine);
-// rhymesApp.getRhyme(lastWordSecondLine);
 
 
 // CAROUSEL ON INDEX PAGE
@@ -173,15 +152,27 @@ function rotate() {
 
 // init function to get the app going
 rhymesApp.init = function () {
+    const url = location.href;
+    // checks if url contains "index.html"
+    if (url.indexOf('index.html') !== -1) {
+        // only run this code on home page.
+        setInterval(rotate, 1000);
+    }
+    
     rhymesApp.setupUserEvents();
     // rhymesApp.goToStepTwo();
     // rhymesApp.goToStepThree();
+
+    // console.log('location');
+    // console.log(location.href);
+   
+
+
 };
 
 
 // document ready
 $(function () {
-    // setInterval(rotate, 1 * 800);
     rhymesApp.init();
 });
 
