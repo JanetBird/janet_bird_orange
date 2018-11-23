@@ -310,7 +310,7 @@ h2 {
   text-align: center;
   padding: 20px 20px 50px 20px; }
 
-.stepOne, .stepTwo {
+.stepOne, .stepTwo, .stepThree {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -322,7 +322,7 @@ h2 {
   -ms-flex-align: center;
   align-items: center;
   min-height: 100vh; }
-  .stepOne div, .stepTwo div {
+  .stepOne div, .stepTwo div, .stepThree div {
     margin-bottom: 20px;
     width: 80%; }
 
@@ -380,3 +380,20 @@ h2 {
     line-height: 2.5rem;
     color: #1b998b;
     text-transform: uppercase; }
+
+.stepThree {
+  margin-top: 300px; }
+  .stepThree a {
+    padding: 10px;
+    font-size: 1.6rem;
+    color: #1f1f1f;
+    margin: 0;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 2px solid #1f1f1f; }
+
+h3 {
+  font-size: 1.6rem;
+  color: #1f1f1f;
+  margin: 0;
+  line-height: 2; }
