@@ -7,6 +7,31 @@
     <title>Orange</title>
     <link rel="stylesheet" href="styles.css">
 
+    <style>
+    
+    .stepOne {
+        min-height: 100vh;
+    }
+
+    .stepTwo {
+        min-height: 100vh;
+    }
+    
+    .stepThree {
+        min-height: 100vh;
+    }
+
+    p {
+        cursor: pointer;
+    }
+    
+    .selectedRhymeOption {
+        font-weight: bolder;
+        background: yellow;
+    }
+
+
+    </style>
 </head>
 <body>
     <main>
@@ -20,13 +45,13 @@
             <form id="stepOneForm" action="">
                 <!-- FIRST LINE OF A POEM -->
                 <div class="firstLine">
-                    <label for="firstLine">First Line:</label>
-                    <input type="text" id="firstLine" placeholder="Your First Line">
+                    <label for="firstLineInput">First Line:</label>
+                    <input type="text" id="firstLineInput" placeholder="Your First Line">
                 </div>
                 <!-- SECOND LINE OF A POEM -->
                 <div class="secondLine">
-                    <label for="secondLine">Second Line:</label>
-                    <input type="text" id="secondLine" placeholder="Your Second Line">
+                    <label for="secondLineInput">Second Line:</label>
+                    <input type="text" id="secondLineInput" placeholder="Your Second Line">
                 </div>
                 <div class="submit">
                     <input id="submitStepOne" class="submitButton" type="submit" value="Help me rhyme">
@@ -41,28 +66,28 @@
                 <!-- THIRD LINE RHYME SUGGESTIONS -->
                 <div id="thirdLineOptions">
                     <!-- will be generated in JS as below
-                    <div>
-                        <p class="rhymeOption">Hello</p>
-                        <p class="rhymeOption selectedRhymeOption">Hello</p> 
-                    </div>
+                    <p class="rhymeOption selectedRhymeOption">Hello</p> 
                     for words to change color when selected by user
                     -->
                 </div>
                 <!-- THIRD LINE OF A POEM -->
                 <div class="thirdLine">
-                    <label for="">Third Line:</label>
-                    <input type="text" id="thirdLine" placeholder="Your Third Line">
+                    <label for="thirdLineInput">Third Line:</label>
+                    <input type="text" id="thirdLineInput" placeholder="Your Third Line">
                 </div>
                 <!-- FOURTH LINE RHYME SUGGESTIONS -->
                 <div id="fourthLineOptions">
                     <!-- will be generated in JS as below
+                    <div>
+                        <p class="rhymeOption selectedRhymeOption">Hello</p> 
+                    </div>
                     for words to change color when selected by user
                     -->
                 </div>
                 <!-- FOURTH LINE OF A POEM -->
                 <div class="fourthLine">
-                    <label for="fourthLine">Fourth Line:</label>
-                    <input type="text" id="fourthLine" placeholder="Your Fourth Line">
+                    <label for="fourthLineInput">Fourth Line:</label>
+                    <input type="text" id="fourthLineInput" placeholder="Your Fourth Line">
                 </div>
 
                 <div class="submit">
@@ -73,14 +98,18 @@
         <!-- STEP TWO SECTION ENDS -->
         <!-- STEP THREE SECTION STARTS -->
         <section class="stepThree">
+            <div id="poemDisplayContainer">
+            <!-- OUR POEM GOES HERE -->
+            </div>
+            <!-- RESTART button -->
+            <form action="">
+                <div class="submit">
+                    <input id="submitStepThree" class="submitButton" type="submit" value="Help me rhyme">
+                </div>
+            </form>
+            <div class="twitterShareContainer">
 
-        <!-- 
-            OUR POEM GOES HERE 
-            + twitter share button
-            + RESTART button
-            (if we have more time we can create another poem, so we'll redirect to the step one & start over)
-        -->
-
+            </div>
         </section>
         <!-- STEP THREE SECTION ENDS -->
     </main>
