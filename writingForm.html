@@ -35,13 +35,13 @@
             <form class="stepOneForm" id="stepOneForm" action="">
                 <!-- FIRST LINE OF A POEM -->
                 <div class="firstLine">
-                    <label for="firstLine"></label>
-                    <input type="text" id="firstLine" placeholder="(your first line)">
+                    <label for="firstLineInput">First Line:</label>
+                    <input type="text" id="firstLineInput" placeholder="Your First Line">
                 </div>
                 <!-- SECOND LINE OF A POEM -->
                 <div class="secondLine">
-                    <label for="secondLine"></label>
-                    <input type="text" id="secondLine" placeholder="(your second line)">
+                    <label for="secondLineInput">Second Line:</label>
+                    <input type="text" id="secondLineInput" placeholder="Your Second Line">
                 </div>
                 <div class="submit">
                     <input id="submitStepOne" class="submitButton" type="submit" value="Help me rhyme">
@@ -74,8 +74,8 @@
                 </div>
         
                 <div class="fourthLine">
-                    <label for="fourthLine"></label>
-                    <input type="text" id="fourthLine" placeholder="(your fourth line)">
+                    <label for="fourthLineInput">Fourth Line:</label>
+                    <input type="text" id="fourthLineInput" placeholder="Your Fourth Line">
                 </div>
 
                 <div class="submit">
@@ -86,23 +86,18 @@
         <!-- STEP TWO SECTION ENDS -->
         <!-- STEP THREE SECTION STARTS -->
         <section class="stepThree">
-
-            <div class="stepThreeForm">
-
-                <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, nam.</h3>
-                <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, nam.</h3>
-                <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, nam.</h3>
-                <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, nam.</h3>
-
-                <a href="#">Back to Top</a>
+            <div id="poemDisplayContainer">
+            <!-- OUR POEM GOES HERE -->
             </div>
-            <!-- 
-            OUR POEM GOES HERE 
-            + twitter share button
-            + RESTART button
-            (if we have more time we can create another poem, so we'll redirect to the step one & start over)
-        -->
+            <!-- RESTART button -->
+            <form action="">
+                <div class="submit">
+                    <input id="submitStepThree" class="submitButton" type="submit" value="Help me rhyme">
+                </div>
+            </form>
+            <div class="twitterShareContainer">
 
+            </div>
         </section>
         <!-- STEP THREE SECTION ENDS -->
     </main>
