@@ -13,14 +13,12 @@
     <header class="wrapper">
         <div class="headerNav">
             <h1>Orange.</h1>
-            <p><svg class="hamburger" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
-                viewBox="0 0 595.3 1052.375" enable-background="new 0 0 595.3 841.9" xml:space="preserve">
-                <polygon points="465,434 138,434 138.2,369.8 464.8,369.8 " />
-                <path d="M446.4,320.4H156.6c15.3-27,37.9-49.3,65.2-64.2h159.6C408.5,271.1,431.2,293.4,446.4,320.4z" />
-                <path d="M448.8,480c-13.9,26.4-34.8,48.6-60.1,64.2H214.2c-25.3-15.6-46.1-37.8-60.1-64.2H448.8z" />
-                <path d="M446.4,320.4H156.6c15.3-27,37.9-49.3,65.2-64.2h159.6C408.5,271.1,431.2,293.4,446.4,320.4z" />
-                <path d="M448.8,480c-13.9,26.4-34.8,48.6-60.1,64.2H214.2c-25.3-15.6-46.1-37.8-60.1-64.2H448.8z" />
-                <path d="M468,402.4c0,10.8-1,21.3-3,31.6H138c-2-10.2-3-20.8-3-31.6c0-11.2,1.1-22.1,3.2-32.6h326.6  C466.9,380.3,468,391.2,468,402.4z" /></svg></p>
+            <div class="menu">
+                <a href="#" class="menuIcon dropDown"><i class="fas fa-chevron-circle-down"></i></a>  
+                <a href="writingForm.html" class="menuIcon play"><i class="fas fa-play"></i></a>
+                <a href="#copyright" class="menuIcon envelope"><i class="fas fa-envelope"></i></a>
+                <a href="#about" class="menuIcon user"><i class="fas fa-user-alt"></i></a>
+            </div>
         </div>
 
         <div class="headerImages">
@@ -37,14 +35,14 @@
         </svg>
     </header>
     <main>
-        <section class="about">
+        <section class="about" id="about">
             <p>Welcome to <span>Orange.</span></p>
             <p>A convenient application for writers of all kinds</p>
             <p>to lay down some lines.</p> 
             <p>With easy access to ryhming words, see your lyrical and poetic pieces come together. Save your content in our app, and return to your words anytime you're ready for more.</p>
         </section>
 
-        <section class="startGallery">
+        <section class="startGallery" id="start">
             <div class="start">
                 <a href="writingForm.html">Start Writing</a>
             </div>
@@ -67,7 +65,7 @@
     </main>
 
     <footer>
-        <p class="copyright">Copyright @ 2018 Bionovaj</p>
+        <p class="copyright" id="copyright">Copyright @ 2018 Bionovaj | contact: hello@bionavaj.com | 416.123.1234</p>
     </footer>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="script.js"></script>
