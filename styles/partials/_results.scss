@@ -1,33 +1,151 @@
-// .writingForm {
-//     display: flex;
-// }
+.form {
+    padding: 10px 20px;
+div {
+        margin: 50px 10px;
+        }
+}
 
-// .form {
-//     padding: 10px 20px;
-// div {
-//         margin: 50px 10px;
-//         }
-// }
+.hamburger {
+    width: 80px;
+}
 
-// input[type=text] {
-//         width: 500px;
-//         @include dark-font(1.2rem);
-//         }
+.mainForm {
+  background: $color-sectxt;  
+}
 
-// label, span, input[type=submit], select {
-//     @include dark-font(1.2rem);
-// }
+.formNav {
+    height: 200px;
+    background: $color-sectxt;
+}
 
-// // .results {
-// //     padding: 10px 20px;
-// //     background: lightgray;
-// //     width: 50%;
-// //     p {
-// //       @include dark-font(1.6rem);  
-// //     }
-// // }
+input[type=text] {
+        width: 100%;
+        @include dark-font(1.6rem);
+        border: none;
+        border-bottom: 2px solid $color-maintxt;
+        }
 
-// .resultsNav {
-//     background: $color-accent2;
-//     height: 150px;
-// }
+label, input[type=submit] {
+    @include dark-font(1.4rem);
+    margin-top: 100px;
+    transition: all 0.25s ease-in;
+}
+
+input[type=submit]:hover {
+    background: lighten($color-accent2, 50%);
+}
+
+
+h2 {
+    @include accent-font(2rem);
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    padding: 20px 20px 50px 20px;
+}
+
+.stepOne, .stepTwo, .stepThree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    div {
+         margin-bottom: 20px;
+         width:80%;
+    }
+}
+
+.stepThree {
+    justify-content: center;
+}
+
+.stepOneForm, .stepTwoForm, {
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.stepOneForm {
+    min-height: 50vh;
+}
+
+.stepTwoForm {
+    min-height: 100vh;
+}
+
+.stepThreeForm {
+    box-shadow: -20px -20px lightgray;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 100px 25px;
+    width: 80%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.submit {
+    display:flex;
+    justify-content: center;
+}
+
+.submitButton {
+            padding: 10px;
+            @include dark-font(1.4rem);
+            border-radius: 5px;
+            text-decoration: none;
+            border: 2px solid $color-maintxt;
+            background: white;
+}
+
+.lineOptions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    p{
+        @include dark-font(1.4rem);
+        text-align: center;
+        line-height: 2.5rem;
+        color: $color-accent2;
+        text-transform: uppercase;
+        margin: 10px;
+    }
+}
+
+.stepThree {
+    background-image: url(../assets/image-8.jpg);
+    min-height: 100vh;
+    background-size: cover;
+    margin-top: 200px;
+    a {
+        padding: 10px;
+        @include dark-font(1.4rem);
+        border-radius: 5px;
+        text-decoration: none;
+        border: 2px solid $color-maintxt;  
+        margin-top: 100px;   
+        background: white;
+        transition: all 0.25s ease-in;
+            &:hover {
+                    background: lighten($color-accent2, 50%);
+            }
+    }
+}
+
+.poemLine {
+    @include cursive-font(2rem); 
+    line-height: 1.25;
+    margin: 20px 0;
+    text-align: center;
+}
+
+ .selectedRhymeOption {
+       background: rgb(255, 196, 0);
+       border-radius: 3px;
+       /* padding: 0 5px; */
+   }
+
+   p.rhymeOption {
+       cursor: pointer;
+       padding: 0 5px;
+   }

@@ -1,0 +1,67 @@
+@media (max-width: 1220px) {
+
+h2 {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.about p {
+    width: 100%;
+}
+}
+
+@media (max-width: 750px) {
+
+.headerNav {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.startGallery {
+    flex-direction: column;
+}
+
+.start {
+    margin: 100px auto;
+}
+
+.gallery {
+    width: 100%;
+}
+
+.about {
+    padding-left: 30px;
+    padding-right: 30px;
+    p {
+        font-size: 1.8rem;
+    }
+}
+
+}
+
+@media (max-width: 375px) {
+
+h1 {
+    font-size: 3.6rem;
+}
+
+.hamburger {
+    width: 60px;
+}
+
+.about p {
+    font-size: 1.6rem;
+}
+
+.gallery {
+    height: 250px;
+        figure:nth-child(even) {
+        display: none;
+    }
+}
+
+.start a {
+    text-align: center;
+}
+
+
+}

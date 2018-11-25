@@ -43,7 +43,7 @@ rhymesApp.getRandomRhymes = function (arr, originalWord, numElements) {
             break;
         }
         // get random rhyme option from the original array
-        let randomArrIndex = Math.floor(Math.random() * arr.length - 1);
+        let randomArrIndex = Math.floor(Math.random() * arr.length);
         let currentRhyme = arr[randomArrIndex];
 
 
@@ -91,9 +91,9 @@ rhymesApp.goToStepTwo = function() {
                 if (response.word === lastWordFirstLine[0]) {
                     const thirdLineOptions = response.rhymes.all;
                 
-                    if (thirdLineOptions === undefined) { 
+                    if (thirdLineOptions === undefined || (thirdLineOptions.length === 1 && thirdLineOptions[0] === lastWordFirstLine[0])) { 
                         // will return orange on every "help me rhyme click", unless the page is refreshed
-                        chosenOptions = ['Orange'];
+                        chosenOptions = ['Orange!'];
                    
                     } else if (thirdLineOptions.length > 20) {
 
@@ -109,8 +109,8 @@ rhymesApp.goToStepTwo = function() {
                 if (response.word === lastWordSecondLine[0]) {
                     const fourthLineOptions = response.rhymes.all;
                     
-                    if (fourthLineOptions === undefined) { 
-                        chosenOptions = ['Orange'];
+                    if (fourthLineOptions === undefined || (fourthLineOptions.length === 1 && fourthLineOptions[0] === lastWordSecondLine[0])) { 
+                        chosenOptions = ['Orange!'];
                         
                     } else if (fourthLineOptions.length > 20) {
 
@@ -149,6 +149,17 @@ rhymesApp.goToStepThree = function () {
         scrollTop: $(".stepThree").offset().top
     }, 1500);
 
+    // Update the Tweet button's text
+    let updatedURL = 'https://twitter.com/intent/tweet?text=';
+    arrayOfSentences.forEach(sentence => {
+        let formattedSentence = sentence.split(' ').join('%20');
+        updatedURL += formattedSentence + '%0A';
+    });
+    updatedURL += '–––%0A' + 'Created using Orange app!';
+    
+
+    $('.twitterShareButton').attr('href', updatedURL);
+
     // function that puts a 4 line poem on the page
     const sentencesContainer = $('#poemDisplayContainer');
     // looping through the array of poem lines
@@ -167,10 +178,10 @@ rhymesApp.restart = function () {
     rhymesApp.fourthLine = '';
 
     // we need to clear inputs
-    $('#firstLine').val('');
-    $('#secondLine').val('');
-    $('#thirdLine').val('');
-    $('#fourthLine').val('');
+    $('#firstLineInput').val('');
+    $('#secondLineInput').val('');
+    $('#thirdLineInput').val('');
+    $('#fourthLineInput').val('');
 
     //delete all craeted paragraphs(rhyme options)
     // scroll up to the top of the page
@@ -198,6 +209,48 @@ rhymesApp.setupUserEvents = function() {
     });
 }
 
+rhymesApp.hamburgerMenu = function() {
+    
+    let active1 = false;
+    let active2 = false;
+    let active3 = false;
+
+    $('.menu').on('click', function () {
+
+        if (!active1) $(this).find('.play').css({
+            'transform': 'translate(0px,125px)'
+        });
+        else $(this).find('.play').css({
+            'transform': 'none'
+        });
+        if (!active2) $(this).find('.envelope').css({
+            'transform': 'translate(-70px,90px)'
+        });
+        else $(this).find('.envelope').css({
+            'transform': 'none'
+        });
+        if (!active3) $(this).find('.user').css({
+            'transform': 'translate(-110px,20px)'
+        });
+        else $(this).find('.user').css({
+            'transform': 'none'
+        });
+
+        active1 = !active1;
+        active2 = !active2;
+        active3 = !active3;
+
+    });
+
+}
+
+rhymesApp.smoothScrool = function() {
+    $('#mouseScroll').on('click', function () {
+        $('html, body').animate({
+            scrollTop: $('#about').offset().top
+        }, 1000);
+    });
+}
 
 // CAROUSEL ON INDEX PAGE
 var theTitle = 0;
@@ -211,15 +264,17 @@ function rotate() {
     document.getElementById('titleImage').src = headerImages[theTitle];
 }
 
-
 // init function to get the app going
 rhymesApp.init = function () {
+    
     const url = location.href;
     // checks if url contains "index.html"
     if (url.indexOf('index.html') !== -1) {
         // only run this code on home page.
         setInterval(rotate, 1000);
     }
+    rhymesApp.hamburgerMenu();
+    rhymesApp.smoothScrool();
     rhymesApp.setupUserEvents();
 };
 

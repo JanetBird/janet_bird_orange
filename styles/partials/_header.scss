@@ -18,18 +18,56 @@ h1 {
     justify-content: space-between;
     align-items: flex-start;
     i {
-       @include accent-font(2.4rem); 
+       @include accent-font(2rem); 
     }
 }
 
-.hamburger {
-    width: 80px;
+.dropDown {
+    position: absolute;
+    z-index: 20;
+}
+
+.menu {
+    position: relative;
+    width: 125px;
+    height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.menuIcon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: $color-maintxt;
+    position: absolute;
+    text-decoration: none;
+    &:hover {
+        background: lighten($color-accent2, 50%);
+    }
+}
+
+.play, .dropDown {
+     transition: all 500ms;
+}
+
+.envelope {
+     transition: all 500ms .2s;
+}
+
+.user {
+      transition: all 500ms .4s; 
 }
 
 .mouseScroll {
     width: 75px;
     bottom: 60px;
     align-self: center;
+    z-index:10;
 }
 
 .headerImages {
