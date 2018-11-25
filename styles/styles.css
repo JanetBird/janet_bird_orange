@@ -330,6 +330,9 @@ h1 {
     .gallery figure:nth-child(4) {
       background-image: url(../assets/image-5.jpg); }
 
+#mouseScroll {
+  cursor: pointer; }
+
 footer {
   background: #1f1f1f;
   text-align: center; }
@@ -427,10 +430,9 @@ h2 {
   min-height: 100vh; }
 
 .stepThreeForm {
-  -webkit-box-shadow: -20px -20px lightgray;
-  box-shadow: -20px -20px lightgray;
+  border-radius: 10px;
   background: rgba(255, 255, 255, 0.8);
-  padding: 100px 25px;
+  padding: 50px 25px;
   width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -507,13 +509,12 @@ h2 {
   color: #1f1f1f;
   margin: 0;
   line-height: 1.25;
-  margin: 20px 0;
+  margin: 10px 0;
   text-align: center; }
 
 .selectedRhymeOption {
   background: #ffc400;
-  border-radius: 3px;
-  /* padding: 0 5px; */ }
+  border-radius: 3px; }
 
 p.rhymeOption {
   cursor: pointer;
