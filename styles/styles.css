@@ -501,14 +501,23 @@ h2 {
     .stepThree a:hover {
       background: #bff4ee; }
 
-h3 {
+.poemLine {
   font-family: 'Satisfy', cursive;
-  font-size: 1.6rem;
+  font-size: 2rem;
   color: #1f1f1f;
   margin: 0;
   line-height: 1.25;
   margin: 20px 0;
   text-align: center; }
+
+.selectedRhymeOption {
+  background: #ffc400;
+  border-radius: 3px;
+  /* padding: 0 5px; */ }
+
+p.rhymeOption {
+  cursor: pointer;
+  padding: 0 5px; }
 
 @media (max-width: 1220px) {
   h2 {
