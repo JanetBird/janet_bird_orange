@@ -132,9 +132,20 @@ h2 {
     }
 }
 
-h3 {
-    @include cursive-font(1.6rem);
+.poemLine {
+    @include cursive-font(2rem); 
     line-height: 1.25;
     margin: 20px 0;
     text-align: center;
 }
+
+ .selectedRhymeOption {
+       background: rgb(255, 196, 0);
+       border-radius: 3px;
+       /* padding: 0 5px; */
+   }
+
+   p.rhymeOption {
+       cursor: pointer;
+       padding: 0 5px;
+   }
