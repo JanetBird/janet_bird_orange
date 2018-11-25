@@ -254,7 +254,7 @@ rhymesApp.smoothScrool = function() {
 
 // CAROUSEL ON INDEX PAGE
 var theTitle = 0;
-const headerImages = new Array('./assets/word-1.png', './assets/word-2.png', './assets/word-3.png', './assets/word-4.png', './assets/word-5.png', './assets/word-6.png' );
+const headerImages = new Array('../assets/word-1.png', '../assets/word-2.png', '../assets/word-3.png', '../assets/word-4.png', '../assets/word-5.png', '../assets/word-6.png' );
 
 function rotate() {
     theTitle++;
