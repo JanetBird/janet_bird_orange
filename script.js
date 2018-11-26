@@ -1,15 +1,15 @@
 const rhymesApp = {
-
     firstLine: '',
     secondLine: '',
     thirdLine: '',
-    fourthLine: ''
+    fourthLine: '',
+    apiKey: '9XESNPgsQwmshJuXetusEPPBhMylp15KY0tjsnZmXwr8rhaViH',
+    headerImages: ['./assets/word-1.png', './assets/word-2.png', './assets/word-3.png', './assets/word-4.png', './assets/word-5.png', './assets/word-6.png'],
+    headerImageCounter: 0
 };
 
-rhymesApp.apiKey = `9XESNPgsQwmshJuXetusEPPBhMylp15KY0tjsnZmXwr8rhaViH`;
-
-// api request function
-rhymesApp.getRhyme = function (word) {
+// getRhyme requests rhymes for a given word
+rhymesApp.getRhyme = function(word) {
     return $.ajax({
         url: `https://wordsapiv1.p.mashape.com/words/${word}/rhymes`,
         method: 'GET',
@@ -20,7 +20,7 @@ rhymesApp.getRhyme = function (word) {
 };
 
 // function displaying rhyme results on the page
-rhymesApp.displayRhymeOptions = function (options, containerID) {
+rhymesApp.displayRhymeOptions = function(options, containerID) {
     // creating container constant
     const container = $(`#${containerID}`);
     // looping through an array & adding elements to display rhyme options
@@ -32,7 +32,7 @@ rhymesApp.displayRhymeOptions = function (options, containerID) {
     });
 }
 
-rhymesApp.getRandomRhymes = function (arr, originalWord, numElements) {
+rhymesApp.getRandomRhymes = function(arr, originalWord, numElements) {
     // numElements is how many random rhymes we want to get in the array
     const randomRhymes = [];
 
@@ -46,9 +46,6 @@ rhymesApp.getRandomRhymes = function (arr, originalWord, numElements) {
         let randomArrIndex = Math.floor(Math.random() * arr.length);
         let currentRhyme = arr[randomArrIndex];
 
-
-        // as we checked what results API gives us, we need to filter out the original word if it is present in the results coming back from the API
-
         // if the random rhyme is not the original word and if it's not already in the array of random words (not to have repeated rhyme options on display) add it to the list
         if (currentRhyme !== originalWord && randomRhymes.indexOf(currentRhyme) === -1) {
             randomRhymes.push(currentRhyme);
@@ -59,8 +56,8 @@ rhymesApp.getRandomRhymes = function (arr, originalWord, numElements) {
 }
 
 // This function is run when user enters their poem's first 2 lines, and clicks the button to go to the next step
-rhymesApp.goToStepTwo = function () {
-
+rhymesApp.goToStepTwo = function() {
+    // remove all rhyme options if user resubmits the first 2 lines
     $('.rhymeOption').remove();
 
     // gets user input (first two sentences) and saves it in a variable
@@ -86,17 +83,13 @@ rhymesApp.goToStepTwo = function () {
             result.forEach(result => {
                 let response = result[0];
                 let chosenOptions = [];
-                console.log('responseeeee', response);
-                // THIRD LINE CONTENTS
+                // third line contents
                 if (response.word === lastWordFirstLine[0]) {
                     const thirdLineOptions = response.rhymes.all;
                 
                     if (thirdLineOptions === undefined || (thirdLineOptions.length === 1 && thirdLineOptions[0] === lastWordFirstLine[0])) { 
-                        // will return orange on every "help me rhyme click", unless the page is refreshed
                         chosenOptions = ['Orange!'];
-                   
                     } else if (thirdLineOptions.length > 20) {
-
                         chosenOptions = rhymesApp.getRandomRhymes(thirdLineOptions, lastWordFirstLine[0], 20);
                     } else {
                         chosenOptions = thirdLineOptions;
@@ -105,15 +98,13 @@ rhymesApp.goToStepTwo = function () {
                     rhymesApp.displayRhymeOptions(chosenOptions, 'thirdLineOptions');
                 };
 
-                // FOURTH LINE CONTENTS
+                // fourth line contents
                 if (response.word === lastWordSecondLine[0]) {
                     const fourthLineOptions = response.rhymes.all;
                     
                     if (fourthLineOptions === undefined || (fourthLineOptions.length === 1 && fourthLineOptions[0] === lastWordSecondLine[0])) { 
                         chosenOptions = ['Orange!'];
-                        
                     } else if (fourthLineOptions.length > 20) {
-
                         chosenOptions = rhymesApp.getRandomRhymes(fourthLineOptions, lastWordSecondLine[0], 20);
                     } else {
                         chosenOptions = fourthLineOptions;
@@ -124,7 +115,7 @@ rhymesApp.goToStepTwo = function () {
             });
 
             // created all the options and can be added the highlight on click functionality to rhyme options
-            $('.rhymeOption').click(function () {
+            $('.rhymeOption').click(function() {
                 $(this).toggleClass('selectedRhymeOption');
             });
         });
@@ -135,7 +126,7 @@ rhymesApp.goToStepTwo = function () {
     }, 1500);
 }
 
-rhymesApp.goToStepThree = function () {
+rhymesApp.goToStepThree = function() {
     const userInputThirdLine = $('#thirdLineInput').val();
     const userInputFourthLine = $('#fourthLineInput').val();
 
@@ -157,7 +148,6 @@ rhymesApp.goToStepThree = function () {
     });
     updatedURL += '–––%0A' + 'Created using Orange app!';
     
-
     $('.twitterShareButton').attr('href', updatedURL);
 
     // function that puts a 4 line poem on the page
@@ -171,7 +161,7 @@ rhymesApp.goToStepThree = function () {
     });
 }
 
-rhymesApp.restart = function () {
+rhymesApp.restart = function() {
     rhymesApp.firstLine = '';
     rhymesApp.secondLine = '';
     rhymesApp.thirdLine = '';
@@ -183,39 +173,38 @@ rhymesApp.restart = function () {
     $('#thirdLineInput').val('');
     $('#fourthLineInput').val('');
 
-    //delete all craeted paragraphs(rhyme options)
     // scroll up to the top of the page
-    // we can scroll to the step one section
     $([document.documentElement, document.body]).animate({
-        scrollTop: $(".stepOne").offset().top
+        scrollTop: $('body').offset().top
     }, 1500);
 }
 
-
-rhymesApp.setupUserEvents = function () {
-    // create a function that saves user input values from Lines 1 & 2
-    // this code will run, when form is submitted
-    $('#stepOneForm').on('submit', function (event) {
-        // prevents form default behaviour
+rhymesApp.setupUserEvents = function() {
+    // go to step 2
+    $('#stepOneForm').on('submit', function(event) {
         event.preventDefault();
         rhymesApp.goToStepTwo();
     });
 
-    // step 3 (reset)
-    $('#stepTwoForm').on('submit', function (event) {
-        // prevents form default behaviour
+    // go to step 3
+    $('#stepTwoForm').on('submit', function(event) {
         event.preventDefault();
         rhymesApp.goToStepThree();
+    });
+
+    // restart
+    $('#stepThreeForm').on('submit', function(event) {
+        event.preventDefault();
+        rhymesApp.restart();
     });
 }
 
 rhymesApp.hamburgerMenu = function() {
-    
     let active1 = false;
     let active2 = false;
     let active3 = false;
 
-    $('.menu').on('click', function () {
+    $('.menu').on('click', function() {
 
         if (!active1) $(this).find('.play').css({
             'transform': 'translate(0px,125px)'
@@ -239,47 +228,42 @@ rhymesApp.hamburgerMenu = function() {
         active1 = !active1;
         active2 = !active2;
         active3 = !active3;
-
     });
-
 }
 
-rhymesApp.smoothScrool = function() {
-    $('#mouseScroll').on('click', function () {
+rhymesApp.smoothScroll = function() {
+    $('#mouseScroll').on('click', function() {
         $('html, body').animate({
             scrollTop: $('#about').offset().top
         }, 1000);
     });
 }
 
-// CAROUSEL ON INDEX PAGE
-var theTitle = 0;
-const headerImages = new Array('../assets/word-1.png', '../assets/word-2.png', '../assets/word-3.png', '../assets/word-4.png', '../assets/word-5.png', '../assets/word-6.png');
-
-function rotate() {
-    theTitle++;
-    if (theTitle == headerImages.length) {
-        theTitle = 0;
+rhymesApp.rotateCarousel = function() {
+    rhymesApp.headerImageCounter++
+    if (rhymesApp.headerImageCounter == rhymesApp.headerImages.length) {
+        rhymesApp.headerImageCounter = 0;
     }
-    document.getElementById('titleImage').src = headerImages[theTitle];
+    document.getElementById('titleImage').src = rhymesApp.headerImages[rhymesApp.headerImageCounter];
+}
+
+rhymesApp.startCarousel = function() {
+    const url = location.href;
+    if (url.indexOf('writingForm.html') === -1) {
+        // only run this code on home page.
+        setInterval(rhymesApp.rotateCarousel, 1000);
+    }
 }
 
 // init function to get the app going
-rhymesApp.init = function () {
-    
-    const url = location.href;
-    // checks if url contains "index.html"
-    if (url.indexOf('index.html') !== -1) {
-        // only run this code on home page.
-        setInterval(rotate, 1000);
-    }
+rhymesApp.init = function() {
+    rhymesApp.startCarousel();
     rhymesApp.hamburgerMenu();
-    rhymesApp.smoothScrool();
+    rhymesApp.smoothScroll();
     rhymesApp.setupUserEvents();
 };
 
-
-// document ready
-$(function () {
+// init the app when document is ready
+$(function() {
     rhymesApp.init();
 });
