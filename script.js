@@ -249,7 +249,7 @@ rhymesApp.rotateCarousel = function() {
 
 rhymesApp.startCarousel = function() {
     const url = location.href;
-    if (url.indexOf('index.html') !== -1) {
+    if (url.indexOf('writingForm.html') === -1) {
         // only run this code on home page.
         setInterval(rhymesApp.rotateCarousel, 1000);
     }
