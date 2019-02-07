@@ -207,19 +207,19 @@ rhymesApp.hamburgerMenu = function() {
     $('.menu').on('click', function() {
 
         if (!active1) $(this).find('.play').css({
-            'transform': 'translate(0px,125px)'
+            'transform': 'translate(0px,95px)'
         });
         else $(this).find('.play').css({
             'transform': 'none'
         });
         if (!active2) $(this).find('.envelope').css({
-            'transform': 'translate(-70px,90px)'
+            'transform': 'translate(-60px,65px)'
         });
         else $(this).find('.envelope').css({
             'transform': 'none'
         });
         if (!active3) $(this).find('.user').css({
-            'transform': 'translate(-110px,20px)'
+            'transform': 'translate(-80px,0px)'
         });
         else $(this).find('.user').css({
             'transform': 'none'

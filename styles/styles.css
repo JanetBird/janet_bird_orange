@@ -179,7 +179,7 @@ h1 {
     margin: 0; }
 
 .dropDown {
-  position: absolute;
+  position: relative;
   z-index: 20; }
 
 .menu {
@@ -195,6 +195,11 @@ h1 {
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: end; }
+  .menu p {
+    font-size: 1.2rem;
+    color: #f6f6f6;
+    margin: 0;
+    font-weight: 700; }
 
 .menuIcon {
   width: 60px;
@@ -234,6 +239,7 @@ h1 {
   width: 75px;
   bottom: 60px;
   -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
   align-self: center;
   z-index: 10; }
 
@@ -547,6 +553,9 @@ p.rhymeOption {
       font-size: 1.8rem; } }
 
 @media (max-width: 375px) {
+  .headerImages {
+    width: 75%;
+    margin: 0 auto; }
   h1 {
     font-size: 3.6rem; }
   .hamburger {
